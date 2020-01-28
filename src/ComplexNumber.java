@@ -29,7 +29,7 @@ public class ComplexNumber {
             imaginary = i;
         }
         private ComplexNumber(int v,boolean isReal) {
-            if(isReal == true) {
+            if(isReal) {
                 real = v;
                 imaginary = 0;
             }
@@ -55,9 +55,11 @@ public class ComplexNumber {
     }
     private static void display(ComplexNumber c1,ComplexNumber c2) {
         //Sum
-        System.out.println("Sum of "+c1.getReal()+"+"+c1.getImaginary()+"i and "+c2.getReal()+"+"+c2.getImaginary()+"i is "+(c1.getReal()+c2.getReal())+"+"+(c1.getImaginary()+c2.getImaginary())+"i");
+        ComplexNumber sum = new ComplexNumber();
+        System.out.println("Sum of "+c1.getReal()+"+"+c1.getImaginary()+"i and "+c2.getReal()+"+"+c2.getImaginary()+"i is "+sum.add(c1,c2).real+"+"+sum.add(c1,c2).imaginary+"i");
 
         //Difference
-        System.out.println("Difference of "+c1.getReal()+"+"+c1.getImaginary()+"i and "+c2.getReal()+"+"+c2.getImaginary()+"i is "+(c1.getReal()-c2.getReal())+"+"+(c1.getImaginary()-c2.getImaginary())+"i");
+        ComplexNumber difference = new ComplexNumber();
+        System.out.println("Difference of "+c1.getReal()+"+"+c1.getImaginary()+"i and "+c2.getReal()+"+"+c2.getImaginary()+"i is "+difference.subtract(c1,c2).real+"+"+difference.subtract(c1,c2).imaginary+"i");
     }
 }
