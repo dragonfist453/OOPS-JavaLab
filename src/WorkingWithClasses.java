@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class WorkingWithClasses {
-    static Address inputAddress()
+    private static Address inputAddress()
     {
         Scanner input = new Scanner(System.in);
         System.out.println("Street num :");
@@ -11,8 +11,7 @@ public class WorkingWithClasses {
         String statename = input.next();
         System.out.println("Country :");
         String countryname = input.next();
-        Address address = new Address(streetnum,cityname,statename,countryname);
-        return address;
+        return new Address(streetnum,cityname,statename,countryname);
     }
     public static void main(String[] args)
     {
